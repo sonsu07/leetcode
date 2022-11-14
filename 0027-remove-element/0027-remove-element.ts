@@ -1,8 +1,10 @@
 function removeElement(nums: number[], val: number): number {
+    let resultMap = new Map();
+    resultMap.set(val,1)
     for (let i = 0; i < nums.length; i++) {
-        if (val === nums[i]) {
-            nums.splice(i, 1);
-            i = -1;
+        if (resultMap.has(nums[i])) {
+            nums.splice(i,1);
+            i = i -1;
         }
     }
     return nums.length;
